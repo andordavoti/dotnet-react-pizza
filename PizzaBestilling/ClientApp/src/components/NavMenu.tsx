@@ -22,7 +22,7 @@ const NavMenu: FC = () => {
       >
         <Container>
           <NavbarBrand tag={Link} to="/">
-            PizzaBestilling
+            Davoti Pizzeria
           </NavbarBrand>
           <NavbarToggler
             onClick={() => setCollapsed((prev) => !prev)}
@@ -36,12 +36,12 @@ const NavMenu: FC = () => {
             <ul className="navbar-nav flex-grow">
               <NavItem>
                 <NavLink tag={Link} className="text-dark" to="/">
-                  Home
+                  Orders
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/counter">
-                  Counter
+                <NavLink tag={Link} className="text-dark" to="/new-order">
+                  New Order
                 </NavLink>
               </NavItem>
             </ul>

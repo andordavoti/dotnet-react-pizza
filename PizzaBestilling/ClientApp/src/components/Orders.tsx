@@ -15,6 +15,7 @@ const Orders: FC = () => {
         setLoading(false);
       } catch (err) {
         alert("Something went wrong...");
+        console.log(err);
       }
     };
 
@@ -34,7 +35,7 @@ const Orders: FC = () => {
     );
   }
 
-  if (!orders) {
+  if (orders && !orders.length) {
     return (
       <h3
         style={{

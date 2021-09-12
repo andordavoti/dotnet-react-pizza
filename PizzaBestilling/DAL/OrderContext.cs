@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace PizzaBestilling.Models
 {
-    public class OrderDB : DbContext
+    public class OrderContext : DbContext
     {
-        public OrderDB(DbContextOptions<OrderDB> options) : base(options)
+        public OrderContext(DbContextOptions<OrderContext> options) : base(options)
         {
             Database.EnsureCreated();
         }

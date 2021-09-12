@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PizzaBestilling.DAL;
 using PizzaBestilling.Models;
 
 namespace PizzaBestilling
@@ -23,7 +24,8 @@ namespace PizzaBestilling
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<OrderDB>(options => options.UseSqlite("Data source=Order.db"));
+            services.AddDbContext<OrderContext>(options => options.UseSqlite("Data source=Order.db"));
+            services.AddScoped<IOrderRepository, OrderRepository>();
 
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

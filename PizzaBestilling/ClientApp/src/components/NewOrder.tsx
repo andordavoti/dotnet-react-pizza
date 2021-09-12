@@ -4,7 +4,7 @@ import "../custom.css";
 
 const NewOrders: FC = () => {
   const initialFormData = {
-    pizzaType: "",
+    pizzaType: "Pizza Margerita (NOK 100)",
     pizzaStyle: "",
     quantity: "",
     fullName: "",
@@ -20,9 +20,27 @@ const NewOrders: FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // TODO: send request to backend, show user an error message if it fails, show success if it works
+
+    try {
+      await fetch("order/newOrder", {
+        method: "post",
+        body: JSON.stringify({
+          ...formData,
+          quantity: Number(formData.quantity),
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      setFormData(initialFormData);
+      alert("Order was successfully registered!");
+    } catch (err) {
+      console.log(err);
+      alert("Something went wrong!");
+    }
   };
 
   return (
@@ -53,9 +71,9 @@ const NewOrders: FC = () => {
                 type="radio"
                 name="pizzaStyle"
                 required
-                value={formData.pizzaStyle}
+                value="American"
                 onChange={handleChange}
-              />{" "}
+              />
               American
             </Label>
           </FormGroup>
@@ -65,9 +83,9 @@ const NewOrders: FC = () => {
                 type="radio"
                 name="pizzaStyle"
                 required
-                value={formData.pizzaStyle}
+                value="Italian"
                 onChange={handleChange}
-              />{" "}
+              />
               Italian
             </Label>
           </FormGroup>

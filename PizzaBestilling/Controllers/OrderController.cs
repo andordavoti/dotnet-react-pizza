@@ -16,8 +16,8 @@ namespace PizzaBestilling.Controllers
             _orderDB = orderDB;
         }
 
-
-        public bool NewOrder(Order newOrder)
+        [HttpPost]
+        public bool NewOrder([FromBody] Order newOrder)
         {
             try
             {

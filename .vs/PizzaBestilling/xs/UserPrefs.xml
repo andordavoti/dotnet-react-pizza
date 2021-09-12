@@ -2,14 +2,14 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="PizzaBestilling/Controllers/OrderController.cs">
     <Files>
       <File FileName="PizzaBestilling/ClientApp/src/App.js" Line="19" Column="1" />
-      <File FileName="PizzaBestilling/Startup.cs" Line="62" Column="52" />
+      <File FileName="PizzaBestilling/Startup.cs" Line="38" Column="10" />
       <File FileName="PizzaBestilling/appsettings.json" Line="1" Column="1" />
-      <File FileName="PizzaBestilling/Program.cs" Line="1" Column="1" />
+      <File FileName="PizzaBestilling/Program.cs" Line="26" Column="2" />
       <File FileName="PizzaBestilling/Pages/Error.cshtml" Line="1" Column="1" />
       <File FileName="PizzaBestilling/Pages/_ViewImports.cshtml" Line="1" Column="1" />
-      <File FileName="PizzaBestilling/Models/Order.cs" Line="14" Column="2" />
-      <File FileName="PizzaBestilling/Models/OrderDB.cs" Line="12" Column="1" />
-      <File FileName="PizzaBestilling/Controllers/OrderController.cs" Line="1" Column="1" />
+      <File FileName="PizzaBestilling/Models/Order.cs" Line="13" Column="48" />
+      <File FileName="PizzaBestilling/Models/OrderDB.cs" Line="16" Column="1" />
+      <File FileName="PizzaBestilling/Controllers/OrderController.cs" Line="20" Column="17" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

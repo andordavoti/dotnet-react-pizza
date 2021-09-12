@@ -34,6 +34,22 @@ namespace PizzaBestilling.Controllers
 
         }
 
+        public async Task<bool> RemoveOrder(int id)
+        {
+            try
+            {
+                var order = await _orderDB.Orders.FindAsync(id);
+                _orderDB.Remove(order);
+                await _orderDB.SaveChangesAsync();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+
         public async Task<List<Order>> GetAll()
         {
             try

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PizzaBestilling.Models;
 
 namespace PizzaBestilling.Controllers
@@ -17,12 +19,12 @@ namespace PizzaBestilling.Controllers
         }
 
         [HttpPost]
-        public bool NewOrder([FromBody] Order newOrder)
+        public async Task<bool> NewOrder([FromBody] Order newOrder)
         {
             try
             {
                 _orderDB.Add(newOrder);
-                _orderDB.SaveChanges();
+                await _orderDB.SaveChangesAsync();
                 return true;
             }
             catch
@@ -32,12 +34,12 @@ namespace PizzaBestilling.Controllers
 
         }
 
-        public List<Order> GetAll()
+        public async Task<List<Order>> GetAll()
         {
             try
             {
 
-                List<Order> orders = _orderDB.Orders.ToList();
+                List<Order> orders = await _orderDB.Orders.ToListAsync();
                 return orders;
             }
             catch
